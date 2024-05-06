@@ -3,7 +3,7 @@
 
 $\mathcal{{Spring \ java \ 21 \ demo } \ \}$
 
-• $\ \ \textcolor{blueviolet}{Gestion des stations service d’une compagnie pétrolière  }$  
+• $\ \ \textcolor{blueviolet}{Gestion  \ des  \ stations  \ service  \ d’une  \ compagnie  \ pétrolière  }$  
 
 
 ![MCD](mcd.jpg)
