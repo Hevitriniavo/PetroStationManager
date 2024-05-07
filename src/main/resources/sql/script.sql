@@ -1,15 +1,3 @@
-![](https://img.shields.io/badge/Spring_boot_3-blueviolet?style=for-the-badge)
-![](https://img.shields.io/badge/Java_17-yellow?style=for-the-badge)
-
-$\mathcal{{Spring \ java \ 21 \ demo } \ \}$
-
-• $\ \ \textcolor{blueviolet}{Gestion  \ des  \ stations  \ service  \ d’une  \ compagnie  \ pétrolière  }$  
-
-
-![MCD](mcd.jpg)
-
-````sql
-
 DROP DATABASE IF EXISTS station_manager;
 CREATE DATABASE station_manager;
 
@@ -23,7 +11,7 @@ CREATE TABLE IF NOT EXISTS stations
     max_volume_gasoline DECIMAL(10, 2) NOT NULL,
     max_volume_diesel DECIMAL(10, 2) NOT NULL,
     max_volume_petrol DECIMAL(10, 2) NOT NULL
-    );
+);
 
 CREATE TABLE IF NOT EXISTS products
 (
@@ -31,7 +19,7 @@ CREATE TABLE IF NOT EXISTS products
     name VARCHAR(255) NOT NULL,
     unit_price DECIMAL(10, 2) NOT NULL,
     quantity DECIMAL(10, 2)
-    );
+);
 
 CREATE TABLE IF NOT EXISTS transactions
 (
@@ -42,7 +30,4 @@ CREATE TABLE IF NOT EXISTS transactions
     quantity DECIMAL(10, 2),
     amount DECIMAL(10, 2) NOT NULL,
     date_transaction TIMESTAMP   NOT NULL,
-    );
-
-
-````
+);
