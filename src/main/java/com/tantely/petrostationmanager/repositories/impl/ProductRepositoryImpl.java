@@ -1,6 +1,7 @@
 package com.tantely.petrostationmanager.repositories.impl;
 
 import com.tantely.petrostationmanager.entities.Product;
+import com.tantely.petrostationmanager.enums.FuelType;
 import com.tantely.petrostationmanager.repositories.ProductRepository;
 import org.springframework.stereotype.Repository;
 
@@ -93,16 +94,14 @@ public class ProductRepositoryImpl implements ProductRepository {
     private Product mapResultSetToProduct(ResultSet rs) throws SQLException {
         return new Product()
                 .setId(rs.getInt("id"))
-                .setName(rs.getString("name"))
+                .setName(FuelType.valueOf(rs.getString("name")))
                 .setQuantity(rs.getDouble("quantity"))
                 .setUnitPrice(rs.getDouble("unit_price"));
     }
 
     private void setProductParameters(PreparedStatement stmt, Product product) throws SQLException {
-        stmt.setString(1, product.getName());
-        stmt.setDouble(2, product.getQuantity());
-        stmt.setDouble(3, product.getUnitPrice());
+        stmt.setString(1, product.getName().name());
+        stmt.setDouble(2, product.getUnitPrice());
+        stmt.setDouble(3, product.getQuantity());
     }
-
-
 }

@@ -31,3 +31,4 @@ CREATE TABLE IF NOT EXISTS transactions
     amount DECIMAL(10, 2) NOT NULL,
     date_transaction TIMESTAMP   NOT NULL
 );
+

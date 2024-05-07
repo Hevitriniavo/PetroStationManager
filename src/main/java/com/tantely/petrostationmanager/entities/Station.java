@@ -18,4 +18,5 @@ public class Station {
     Double maxVolumeGasoline;
     Double maxVolumePetrol;
     Double maxVolumeDiesel;
+
 }

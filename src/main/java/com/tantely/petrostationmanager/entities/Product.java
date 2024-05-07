@@ -1,5 +1,6 @@
 package com.tantely.petrostationmanager.entities;
 
+import com.tantely.petrostationmanager.enums.FuelType;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
@@ -13,7 +14,14 @@ import lombok.experimental.FieldDefaults;
 @Accessors(chain = true)
 public class Product {
     Integer id;
-    String name;
+    FuelType name;
     Double unitPrice;
     Double quantity;
+
+    public double calculateQuantityByAmount(double amount){
+        return  amount / unitPrice;
+    }
+    public double calculateAmountByQuantity(double quantity){
+        return  quantity * unitPrice;
+    }
 }
