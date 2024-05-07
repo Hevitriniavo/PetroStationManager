@@ -4,10 +4,7 @@ import com.tantely.petrostationmanager.entities.Station;
 import com.tantely.petrostationmanager.repositories.StationRepository;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -51,7 +48,7 @@ public class StationRepositoryImpl implements StationRepository {
     @Override
     public Station create(Station toCreate) throws SQLException {
         final var query = "INSERT INTO stations (name, address, max_volume_diesel, max_volume_gasoline, max_volume_petrol) VALUES (?, ?, ?, ?, ?)";
-        try (final var stmt = connection.prepareStatement(query)) {
+        try (final var stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             setStationParameters(stmt, toCreate);
             final var rows = stmt.executeUpdate();
             if (rows > 0) {

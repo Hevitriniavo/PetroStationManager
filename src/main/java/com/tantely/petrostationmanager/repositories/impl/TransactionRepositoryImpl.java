@@ -49,7 +49,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     @Override
     public Transaction create(Transaction toCreate) throws SQLException {
         final String query = "INSERT INTO transactions (station_id, product_id, type, quantity, amount, date_transaction) VALUES (?, ?, ?, ?, ?, ?)";
-        try (final var stmt = connection.prepareStatement(query)) {
+        try (final var stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             setTransactionParameters(stmt, toCreate);
             final int rows = stmt.executeUpdate();
             if (rows > 0) {

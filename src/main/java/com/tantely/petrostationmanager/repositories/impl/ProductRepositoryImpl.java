@@ -19,7 +19,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Optional<Product> findById(Integer id) throws SQLException {
-        final var query = "SELECT * FROM stations WHERE id = ?";
+        final var query = "SELECT * FROM products WHERE id = ?";
         try (final var stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             try (var rs = stmt.executeQuery()) {
