@@ -29,5 +29,5 @@ CREATE TABLE IF NOT EXISTS transactions
     type   VARCHAR(50) NOT NULL,
     quantity DECIMAL(10, 2),
     amount DECIMAL(10, 2) NOT NULL,
-    date_transaction TIMESTAMP   NOT NULL,
+    date_transaction TIMESTAMP   NOT NULL
 );
