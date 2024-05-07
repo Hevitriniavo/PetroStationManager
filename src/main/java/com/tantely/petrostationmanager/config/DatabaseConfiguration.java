@@ -16,6 +16,7 @@ public class DatabaseConfiguration {
     @Value("${postgresql.database.url}")
     private String url;
 
+    
     @Value("${postgresql.database.username}")
     private String username;
 
