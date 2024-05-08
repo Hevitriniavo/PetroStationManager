@@ -1,7 +1,7 @@
 package com.tantely.petrostationmanager.enums;
 
 public enum FuelType {
-    GASOLINE,
     PETROL,
+    GASOLINE,
     DIESEL
 }
